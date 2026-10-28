@@ -18,9 +18,12 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Unpack reviewed public files
-        run: python -m zipfile -e public-site.zip _site
       - uses: actions/configure-pages@v5
+        id: pages
+      - name: Build readable public sources
+        env:
+          SITE_BASE: ${{ steps.pages.outputs.base_url }}
+        run: python build_site.py
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
