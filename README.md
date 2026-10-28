@@ -1,2 +1,3 @@
-# braaapaganda-site
-Public Braaapaganda editorial site preview. Articles, public videos and AMA reform proposals.
+# Braaapaganda public editorial preview
+
+Reviewed public static pages only. No member data, premium archives, private evidence or credentials. Original site and billing remain unchanged during transition.
