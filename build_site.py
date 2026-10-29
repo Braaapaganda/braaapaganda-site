@@ -13,6 +13,9 @@ for src in source.iterdir():
     if not src.is_file(): continue
     dest=output/src.name.replace('__','/')
     dest.parent.mkdir(parents=True,exist_ok=True)
+    if src.suffix.lower() in ('.ico','.png','.jpg','.jpeg','.webp','.gif'):
+        dest.write_bytes(src.read_bytes())
+        continue
     text=src.read_text(encoding='utf-8')
     if src.name=='404.html':
         text=text.replace('https://braaapaganda.github.io/braaapaganda-site/',base).replace('https://braaapaganda.com/',base)
