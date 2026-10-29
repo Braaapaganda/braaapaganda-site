@@ -10,6 +10,12 @@ Run `python build_site.py`, then `python -m http.server 8766 --directory _site` 
 
 ## Privacy boundary and launch
 
-Never add member data, paid archives, private evidence, credentials or WordPress exports. The investigation remains in its separate repository. Contact uses the publicly listed braaapaganda@gmail.com email. No donation checkout is enabled.
+Never add member data, paid archives, private evidence, credentials or WordPress exports. Published investigations live under `/investigations/`. The original investigation repository and URL remain available for compatibility; no private evidence was copied. Contact uses the publicly listed braaapaganda@gmail.com email. Voluntary donations link to the verified existing Ko-fi page at https://ko-fi.com/braaapaganda; no paid benefits are offered.
 
-Keep all 35 HTML pages' noindex,nofollow metadata and robots.txt Disallow until approved launch. Remove both only at launch. The 404 base URL comes from GitHub Pages configuration during deployment and adapts to the project URL or future custom domain. DNS and billing are separate tasks. The original WordPress backend must remain until paid access and private records are handled. public-site.zip is an obsolete historical artifact and is not used by the readable-source workflow.
+The approved launch source permits indexing; preserve canonical URLs and the robots policy when publishing new articles. The 404 base URL comes from GitHub Pages configuration during deployment and adapts to the project URL or future custom domain. DNS and billing are separate tasks. Keep the original hosting and private backup available for rollback until domain verification is complete. public-site.zip is an obsolete historical artifact and is not used by the readable-source workflow.
+
+## Publish an investigation
+
+Each case has its own directory: `investigations__case-slug__index.html` and optional `investigations__case-slug__report.html`. Copy the existing case shell, preserve shared navigation, and add a card to `investigations__index.html`. Use the shared site design and scoped `assets__investigation.css`; preserve source links, evidence labels, limitations, and publication dates. Publish only reviewed public material, never private evidence files. Main navigation points to the index so future cases need no navigation rewrite.
+
+The main custom domain is launched and indexable. Ko-fi is a voluntary external support link, not paid access. Private WordPress backups and DNS rollback records stay outside this public repository; old hosting and domain registration remain intact.
