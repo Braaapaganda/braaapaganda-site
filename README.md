@@ -19,3 +19,9 @@ The approved launch source permits indexing; preserve canonical URLs and the rob
 Each case has its own directory: `investigations__case-slug__index.html` and optional `investigations__case-slug__report.html`. Copy the existing case shell, preserve shared navigation, and add a card to `investigations__index.html`. Use the shared site design and scoped `assets__investigation.css`; preserve source links, evidence labels, limitations, and publication dates. Publish only reviewed public material, never private evidence files. Main navigation points to the index so future cases need no navigation rewrite.
 
 The main custom domain is launched and indexable. Ko-fi is a voluntary external support link, not paid access. Private WordPress backups and DNS rollback records stay outside this public repository; old hosting and domain registration remain intact.
+
+## Search indexing
+
+Every build generates `_site/sitemap.xml` from canonical URLs in reviewed public HTML. New articles are included automatically. Aliases, noindex pages, error pages, and retired membership/forum transition notices are omitted. Keep `sitemap.py` exclusions current when retiring a page; never add private material to `content/`. Invalid or missing canonical metadata fails the build. `robots.txt` advertises the production sitemap. Dates are intentionally omitted rather than reporting build time as a content update.
+
+Run `python -m unittest discover -s tests` and `python build_site.py` before publishing. Search Console recrawling and indexing happen separately from deployment.

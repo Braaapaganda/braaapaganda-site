@@ -1,5 +1,6 @@
 """Build public HTML from readable content files; no external dependencies."""
 from pathlib import Path
+from sitemap import write_sitemap
 import os
 from urllib.parse import urlparse
 source=Path('content'); output=Path('_site')
@@ -21,3 +22,5 @@ for src in source.iterdir():
         text=text.replace('https://braaapaganda.github.io/braaapaganda-site/',base).replace('https://braaapaganda.com/',base)
     dest.write_text(text,encoding='utf-8')
 print('Built',sum(p.is_file() for p in output.rglob('*')),'public files')
+
+print('Sitemap:', write_sitemap(source, output/'sitemap.xml'), 'canonical public URLs')
